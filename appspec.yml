@@ -1,8 +1,8 @@
 version: 4.2
 os: windows
 files:
-  - source: \*
-    destination: c:\tmp\
+  - source: \weblogic-demo\*
+    destination: c:\tmp\weblogic-demo\
 hooks:
   ApplicationStop:
     - location: scripts\stop.bat
