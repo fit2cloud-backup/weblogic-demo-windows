@@ -1,0 +1,26 @@
+version: 4.2
+os: windows
+files:
+  - source: /
+    destination: c:/tmp/weblogic-demo/
+hooks:
+  ApplicationStop:
+    - location: scripts/stop.bat
+      timeout: 300
+      runas: administrator
+  BeforeInstall:
+    - location: scripts/install_dependencies.bat
+      timeout: 300
+      runas: administrator
+  AfterInstall:
+    - location: scripts/configure.bat
+      timeout: 300
+      runas: administrator
+  ApplicationStart:
+    - location: scripts/start.bat
+      timeout: 300
+      runas: administrator
+  ValidateService:
+    - location: scripts/validate_service.ps1
+      timeout: 300
+      runas: administrator
