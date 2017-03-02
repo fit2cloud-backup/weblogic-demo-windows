@@ -1,21 +1,21 @@
 version: 4.2
 os: windows
 files:
-  - source: /
-    destination: c:/tmp/weblogic-demo/
+  - source: \
+    destination: c:\tmp\weblogic-demo\
 hooks:
   ApplicationStop:
-    - location: scripts/stop.bat
+    - location: scripts\stop.bat
       timeout: 300
   BeforeInstall:
-    - location: scripts/install_dependencies.bat
+    - location: scripts\install_dependencies.bat
       timeout: 300
   AfterInstall:
-    - location: scripts/configure.bat
+    - location: scripts\configure.bat
       timeout: 300
   ApplicationStart:
-    - location: scripts/start.bat
+    - location: scripts\start.bat
       timeout: 300
   ValidateService:
-    - location: scripts/validate_service.ps1
+    - location: scripts\validate_service.ps1
       timeout: 300
